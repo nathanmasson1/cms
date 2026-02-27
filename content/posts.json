@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "ola",
+    "slug": "ola",
+    "type": "post",
+    "date": "2026-02-27T00:43:15.847586",
+    "category_id": 1,
+    "featured_image": "/static/uploads/img_20260226214314.JPG",
+    "tags": []
+  },
+  {
+    "id": 2,
+    "title": "sdsdds",
+    "slug": "sdsdds",
+    "type": "post",
+    "date": "2026-02-27T00:45:45.591758",
+    "category_id": 1,
+    "featured_image": "/static/uploads/img_20260226214542.JPG",
+    "tags": []
+  }
+]
