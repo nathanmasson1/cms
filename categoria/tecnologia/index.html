@@ -11,8 +11,13 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="/"></a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="/">Início</a></li>
                     
                     <li class="nav-item"><a class="nav-link" href="/categoria/blog/">Blog</a></li>
@@ -20,6 +25,13 @@
                     <li class="nav-item"><a class="nav-link" href="/categoria/tecnologia/">Tecnologia</a></li>
                     
                 </ul>
+
+                <form class="d-flex position-relative mt-3 mt-lg-0" onsubmit="event.preventDefault();">
+                    <input class="form-control rounded-pill bg-light" type="search" id="searchInput" placeholder="Buscar artigos..." autocomplete="off">
+
+                    <div id="searchResults" class="list-group position-absolute w-100 shadow rounded-3 d-none" style="top: 110%; z-index: 1000; max-height: 350px; overflow-y: auto;">
+                    </div>
+                </form>
             </div>
         </div>
     </nav>
@@ -63,16 +75,13 @@
         </div>
 
         
-
     </main>
 
     <footer class="bg-dark text-light py-4 mt-auto">
         <div class="container text-center">
             <ul class="list-inline mb-3">
                 
-                <li class="list-inline-item mx-3">
-                    <a href="/sobre-mim/" class="text-decoration-none text-light opacity-75 custom-hover">Sobre Mim</a>
-                </li>
+                <li class="list-inline-item mx-3"><a href="/sobre-mim/" class="text-decoration-none text-light opacity-75 custom-hover">Sobre Mim</a></li>
                 
             </ul>
             <p class="small text-muted mb-0">&copy; 2026 . Feito com o Git-CMS.</p>
@@ -81,6 +90,65 @@
 
     <style>
         .custom-hover:hover { opacity: 1 !important; text-decoration: underline !important; }
+        #searchResults::-webkit-scrollbar { width: 6px; }
+        #searchResults::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
     </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            let postsData = [];
+
+            try {
+                // Como pode estar em uma subpasta (/categoria/slug/), chamamos o JSON na raiz do domínio com a barra (/) no começo
+                const response = await fetch('/posts.json');
+                if (response.ok) { postsData = await response.json(); }
+            } catch (error) { console.error("Erro ao carregar o banco de pesquisa."); }
+
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase().trim();
+                searchResults.innerHTML = '';
+
+                if (query.length < 2) {
+                    searchResults.classList.add('d-none');
+                    return;
+                }
+
+                const filteredPosts = postsData.filter(post => post.title.toLowerCase().includes(query));
+
+                if (filteredPosts.length > 0) {
+                    filteredPosts.forEach(post => {
+                        const link = document.createElement('a');
+                        link.href = `/${post.slug}/`;
+                        link.className = 'list-group-item list-group-item-action d-flex align-items-center border-0 border-bottom';
+
+                        const imgHtml = post.image
+                            ? `<img src="${post.image}" class="rounded me-3 object-fit-cover" style="width: 45px; height: 45px;">`
+                            : `<div class="bg-secondary rounded me-3 opacity-25" style="width: 45px; height: 45px;"></div>`;
+
+                        link.innerHTML = `
+                            ${imgHtml}
+                            <div class="overflow-hidden">
+                                <h6 class="mb-0 text-truncate text-dark fw-bold" style="font-size: 0.9rem;">${post.title}</h6>
+                                <small class="text-muted" style="font-size: 0.75rem;">${post.date}</small>
+                            </div>
+                        `;
+                        searchResults.appendChild(link);
+                    });
+                    searchResults.classList.remove('d-none');
+                } else {
+                    searchResults.innerHTML = '<div class="list-group-item text-muted text-center py-3 border-0 small">Nenhum artigo encontrado.</div>';
+                    searchResults.classList.remove('d-none');
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                    searchResults.classList.add('d-none');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
