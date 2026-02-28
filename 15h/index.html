@@ -21,6 +21,7 @@
     
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
 <body class="d-flex flex-column min-vh-100">
 
@@ -72,6 +73,38 @@
             <div class="content lh-lg" style="font-size: 1.1rem;">
                 <p>dffdf</p>
             </div>
+
+            <div class="d-flex align-items-center gap-2 mt-5 mb-2 border-top pt-4">
+                <span class="fw-bold text-muted me-2 small text-uppercase tracking-wide">Compartilhe:</span>
+
+                <a href="https://api.whatsapp.com/send?text=15h%20-%20Leia%20aqui:%20https://cms.visaoverdeai.com.br/15h/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn btn-success rounded-circle d-flex align-items-center justify-content-center text-white"
+                   style="width: 40px; height: 40px; background-color: #25D366; border: none;">
+                    <i class="bi bi-whatsapp fs-5"></i>
+                </a>
+
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://cms.visaoverdeai.com.br/15h/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center text-white"
+                   style="width: 40px; height: 40px; background-color: #1877F2; border: none;">
+                    <i class="bi bi-facebook fs-5"></i>
+                </a>
+
+                <a href="https://twitter.com/intent/tweet?text=15h&url=https://cms.visaoverdeai.com.br/15h/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn btn-dark rounded-circle d-flex align-items-center justify-content-center text-white"
+                   style="width: 40px; height: 40px; border: none;">
+                    <i class="bi bi-twitter-x fs-5"></i>
+                </a>
+
+                <button onclick="navigator.clipboard.writeText('https://cms.visaoverdeai.com.br/15h/'); const btn = this; const icon = btn.querySelector('i'); icon.classList.replace('bi-link-45deg', 'bi-check2'); setTimeout(() => icon.classList.replace('bi-check2', 'bi-link-45deg'), 2000);"
+                   class="btn btn-secondary rounded-circle d-flex align-items-center justify-content-center text-white"
+                   style="width: 40px; height: 40px; border: none;" title="Copiar link do artigo">
+                    <i class="bi bi-link-45deg fs-4"></i>
+                </button>
+            </div>
+
         </article>
 
         
