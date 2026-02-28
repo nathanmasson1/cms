@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu blog visao verde</title>
-    
-    <link rel="icon" href="/static/uploads/img_20260228154859.JPG" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/static/uploads/img_20260228154859.JPG">
-    
+
     <meta name="description" content="minha descriçao do meu blog visao verde">
 
     <meta property="og:type" content="website">
@@ -21,13 +18,23 @@
     <meta name="twitter:image" content="https://cms.visaoverdeai.com.br/static/uploads/img_20260228154856.JPG">
     
 
+    
+    <link rel="icon" href="/static/uploads/img_20260228154859.JPG" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/static/uploads/img_20260228154859.JPG">
+    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="d-flex flex-column min-vh-100">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="/">Meu blog visao verde</a>
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="/">
+                
+                    <img src="/static/uploads/img_20260228154856.JPG" alt="Logo" style="height: 35px; object-fit: contain;" class="me-2">
+                
+                Meu blog visao verde
+            </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -45,9 +52,8 @@
 
                 <form class="d-flex position-relative mt-3 mt-lg-0" onsubmit="event.preventDefault();">
                     <input class="form-control rounded-pill bg-light" type="search" id="searchInput" placeholder="Buscar artigos..." autocomplete="off">
-
                     <div id="searchResults" class="list-group position-absolute w-100 shadow rounded-3 d-none" style="top: 110%; z-index: 1000; max-height: 350px; overflow-y: auto;">
-                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -55,10 +61,7 @@
 
     <main class="container mt-5 mb-5 flex-grow-1">
         <header class="mb-5 text-center">
-            
-                <img src="/static/uploads/img_20260228154856.JPG" alt="Logo" style="max-height: 80px;" class="mb-3">
-            
-            <h1>Meu blog visao verde</h1>
+            <h1 class="display-4 fw-bold text-dark">Meu blog visao verde</h1>
             <p class="lead text-muted">minha descriçao do meu blog visao verde</p>
         </header>
 
@@ -214,7 +217,6 @@
 
     <style>
         .custom-hover:hover { opacity: 1 !important; text-decoration: underline !important; }
-        /* Barra de rolagem bonitinha para os resultados da pesquisa */
         #searchResults::-webkit-scrollbar { width: 6px; }
         #searchResults::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
     </style>
@@ -225,7 +227,6 @@
             const searchResults = document.getElementById('searchResults');
             let postsData = [];
 
-            // 1. Baixa o arquivo posts.json assim que o site carrega (em segundo plano)
             try {
                 const response = await fetch('/posts.json');
                 if (response.ok) {
@@ -235,30 +236,25 @@
                 console.error("Erro ao carregar o banco de pesquisa.");
             }
 
-            // 2. Escuta cada letra que o usuário digita
             searchInput.addEventListener('input', (e) => {
                 const query = e.target.value.toLowerCase().trim();
-                searchResults.innerHTML = ''; // Limpa os resultados anteriores
+                searchResults.innerHTML = '';
 
-                // Só pesquisa se tiver digitado pelo menos 2 letras
                 if (query.length < 2) {
                     searchResults.classList.add('d-none');
                     return;
                 }
 
-                // 3. Filtra os posts que contêm o termo digitado no título
                 const filteredPosts = postsData.filter(post =>
                     post.title.toLowerCase().includes(query)
                 );
 
-                // 4. Monta a caixinha de resultados na tela
                 if (filteredPosts.length > 0) {
                     filteredPosts.forEach(post => {
                         const link = document.createElement('a');
                         link.href = `/${post.slug}/`;
                         link.className = 'list-group-item list-group-item-action d-flex align-items-center border-0 border-bottom';
 
-                        // Se tiver imagem, mostra uma miniatura, se não, um quadrado cinza
                         const imgHtml = post.image
                             ? `<img src="${post.image}" class="rounded me-3 object-fit-cover" style="width: 45px; height: 45px;">`
                             : `<div class="bg-secondary rounded me-3 opacity-25" style="width: 45px; height: 45px;"></div>`;
@@ -279,7 +275,6 @@
                 }
             });
 
-            // 5. Esconde os resultados se o usuário clicar fora da barra
             document.addEventListener('click', (e) => {
                 if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
                     searchResults.classList.add('d-none');
