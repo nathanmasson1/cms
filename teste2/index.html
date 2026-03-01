@@ -98,7 +98,38 @@
         </div>
     </nav>
 
-    <main class="container mt-5 mb-5 flex-grow-1">
+    
+    <header class="position-relative w-100" style="height: 55vh; min-height: 400px; background-image: url('/static/uploads/img_20260228162634.JPG'); background-size: cover; background-position: center; margin-bottom: 2rem;">
+
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.65);"></div>
+
+        <div class="position-relative h-100 container d-flex flex-column justify-content-center align-items-start text-white">
+            <h1 class="display-4 fw-bold mb-3" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.6);">teste2</h1>
+
+            <p class="mb-0 fs-6 d-flex align-items-center flex-wrap gap-2 fw-light" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">
+                
+                <span>por <strong>Nathan</strong></span>
+                <span class="d-none d-sm-inline">/</span>
+                
+
+                <span>28/02/2026</span>
+
+                
+                    
+                
+                    
+                    <span class="d-none d-sm-inline">/</span>
+                    <a href="/categoria/tecnologia/" class="text-white text-decoration-none custom-hover fw-bold">
+                        Tecnologia
+                    </a>
+                    
+                
+            </p>
+        </div>
+    </header>
+    
+
+    <main class="container mb-5 flex-grow-1 ">
         <div class="row">
 
             <div class="col-lg-8 pe-lg-5">
@@ -110,28 +141,9 @@
                 </nav>
 
                 <article>
-                    <h1 class="mb-3 display-4 fw-bold">teste2</h1>
-
-                    <p class="text-muted mb-4 d-flex align-items-center flex-wrap gap-2">
-                        <span><i class="bi bi-calendar3"></i> Publicado em 28/02/2026</span>
-
-                        
-                            
-                        
-                            
-                            <span class="text-black-50 d-none d-sm-inline">•</span>
-                            <a href="/categoria/tecnologia/" class="text-decoration-none text-muted custom-hover">
-                                <i class="bi bi-folder2-open"></i> Tecnologia
-                            </a>
-                            
-                        
-                    </p>
-
-                    
-                    <img src="/static/uploads/img_20260228162634.JPG" class="img-fluid rounded mb-5 w-100 shadow-sm" alt="teste2">
                     
 
-                    <div class="content lh-lg" style="font-size: 1.1rem;">
+                    <div class="content lh-lg mt-2" style="font-size: 1.15rem;">
                         <p>fgfg</p>
                     </div>
 
@@ -246,19 +258,12 @@
             let postsData = [];
 
             try {
-                // Carrega o banco de dados geral dos posts (o mesmo que alimenta a busca)
                 const response = await fetch('/posts.json');
                 if (response.ok) {
                     postsData = await response.json();
 
-                    // ==========================================
-                    // INJETAR ARTIGOS RECENTES NA SIDEBAR LADO CLIENTE
-                    // ==========================================
                     if (dynamicRecentPosts && postsData.length > 0) {
-                        // Pega a URL do artigo atual para não mostrar ele mesmo na barra lateral
                         const currentSlug = window.location.pathname.replace(/\//g, '');
-
-                        // Pega apenas os 6 primeiros (mais recentes)
                         const recent = postsData.filter(p => p.slug !== currentSlug).slice(0, 6);
 
                         recent.forEach(post => {
