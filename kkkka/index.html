@@ -99,8 +99,7 @@
     </nav>
 
     
-    <header class="position-relative w-100" style="height: 55vh; max-height: 400px; background-image: url('/static/uploads/img_20260228235600.JPG'); background-size: cover; background-position: center; margin-bottom: 2rem;">
-
+    <header class="mobile-header position-relative w-100" style="height: 55vh; max-height: 400px; background-image: url('/static/uploads/img_20260228235600.JPG'); background-size: cover; background-position: center; margin-bottom: 2rem;">
         <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.65);"></div>
 
         <div class="position-relative h-100 container d-flex flex-column justify-content-center align-items-start text-white">
@@ -242,6 +241,11 @@
         #searchResults::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
         .content img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.5rem 0; }
         .content h2, .content h3 { margin-top: 2rem; margin-bottom: 1rem; font-weight: bold; }
+        @media (max-width: 768px) {
+            .mobile-header {
+            max-height: 260px !important;
+        }
+}
     </style>
 
     <script>
