@@ -46,34 +46,47 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="/">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #2b5c92;">
+        <div class="container py-2">
+
+            <a class="navbar-brand fw-bold d-flex align-items-center me-lg-5" href="/">
                 
-                    <img src="/static/uploads/img_20260228161934.JPG" alt="site meu" style="height: 35px; object-fit: contain;">
+                    <img src="/static/uploads/img_20260228161934.JPG" alt="site meu" style="height: 40px; object-fit: contain;">
                 
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="/">Início</a></li>
+
+                <ul class="navbar-nav me-auto gap-1 gap-lg-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold" href="/" style="font-size: 0.95rem;">Início</a>
+                    </li>
                     
-                    <li class="nav-item"><a class="nav-link" href="/categoria/blog/">Blog</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold" href="/categoria/blog/" style="font-size: 0.95rem;">Blog</a>
+                    </li>
                     
-                    <li class="nav-item"><a class="nav-link" href="/categoria/tecnologia/">Tecnologia</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold" href="/categoria/tecnologia/" style="font-size: 0.95rem;">Tecnologia</a>
+                    </li>
                     
                 </ul>
 
-                <form class="d-flex position-relative mt-3 mt-lg-0" onsubmit="event.preventDefault();">
-                    <input class="form-control rounded-pill bg-light" type="search" id="searchInput" placeholder="Buscar artigos..." autocomplete="off">
-
-                    <div id="searchResults" class="list-group position-absolute w-100 shadow rounded-3 d-none" style="top: 110%; z-index: 1000; max-height: 350px; overflow-y: auto;">
+                <form class="d-flex position-relative mt-3 mt-lg-0" onsubmit="event.preventDefault();" style="width: 100%; max-width: 320px;">
+                    <div class="input-group">
+                        <input class="form-control border-0 shadow-none py-2 ps-3" type="search" id="searchInput" placeholder="Pesquisar por..." autocomplete="off" style="font-size: 0.95rem; border-radius: 4px 0 0 4px;">
+                        <span class="input-group-text bg-white border-0 text-muted pe-3" style="border-radius: 0 4px 4px 0;">
+                            <i class="bi bi-search"></i>
+                        </span>
                     </div>
+
+                    <div id="searchResults" class="list-group position-absolute w-100 shadow-lg rounded-3 d-none" style="top: 110%; z-index: 1000; max-height: 350px; overflow-y: auto;"></div>
                 </form>
+
             </div>
         </div>
     </nav>
