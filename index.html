@@ -3,31 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Meu blog cms</title>
 
-    <meta name="description" content="">
+    <meta name="description" content="descriçao nathan ">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
-    <meta property="og:site_name" content="">
+    <meta property="og:title" content="Meu blog cms">
+    <meta property="og:description" content="descriçao nathan ">
+    <meta property="og:site_name" content="Meu blog cms">
 
     
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="/static/uploads/img_20260307001136.JPG">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="/static/uploads/img_20260307001136.JPG">
     
 
+    
+    <link rel="icon" href="/static/uploads/img_20260307001139.JPG" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/static/uploads/img_20260307001139.JPG">
     
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --glamour-bg: #fffbfb; /* Fundo levemente quente/rosado */
+            --glamour-text: #2c2c2c;
+            --glamour-accent: #d4af37; /* Dourado suave */
+        }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--glamour-bg); color: var(--glamour-text); }
+        h1, h2, h3, h4, h5, h6, .navbar-brand { font-family: 'Playfair Display', serif; }
+
+        /* Navbar Chic */
+        .navbar-glamour { background-color: #ffffff; border-bottom: 1px solid #f0e6e6; padding: 1.5rem 0; }
+        .nav-link { text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; font-weight: 500; color: #555 !important; transition: color 0.3s; }
+        .nav-link:hover { color: var(--glamour-accent) !important; }
+
+        /* Busca Sofisticada */
+        .search-input { border: none; border-bottom: 1px solid #ccc; border-radius: 0; background: transparent; padding-left: 0; font-family: 'Montserrat'; font-size: 0.85rem; }
+        .search-input:focus { outline: none; box-shadow: none; border-bottom-color: var(--glamour-accent); background: transparent; }
+
+        /* Cards de Post */
+        .fashion-card { border: none; background: transparent; }
+        .fashion-card .img-wrapper { overflow: hidden; }
+        .fashion-card img { transition: transform 0.7s ease; border-radius: 0; }
+        .fashion-card:hover img { transform: scale(1.05); }
+        .post-category { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; color: var(--glamour-accent); font-weight: 600; text-decoration: none; }
+        .post-title { font-weight: 600; font-size: 1.5rem; line-height: 1.3; color: var(--glamour-text); transition: color 0.3s; }
+        .fashion-card:hover .post-title { color: var(--glamour-accent); }
+
+        /* Botões */
+        .btn-glamour { background-color: var(--glamour-text); color: white; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; border-radius: 0; padding: 10px 24px; transition: 0.3s; }
+        .btn-glamour:hover { background-color: var(--glamour-accent); color: white; }
+    </style>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "",
+      "name": "Meu blog cms",
       "url": "/",
-      "description": "",
+      "description": "descriçao nathan ",
       "potentialAction": {
         "@type": "SearchAction",
         "target": "/?q={search_term_string}",
@@ -39,200 +80,162 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-    <nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #2b5c92;">
-        <div class="container py-2">
+    <header class="navbar-glamour sticky-top shadow-sm">
+        <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between">
 
-            <a class="navbar-brand fw-bold d-flex align-items-center me-lg-5" href="/">
+            <div class="d-none d-lg-flex gap-3 align-items-center w-25">
+                <a href="https://www.instagram.com/" class="text-dark fs-5"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.youtube.com/feed/subscriptions" class="text-dark fs-5"><i class="bi bi-youtube"></i></a>
+                <a href="https://x.com/" class="text-dark fs-5"><i class="bi bi-twitter-x"></i></a>
+            </div>
+
+            <a class="navbar-brand text-dark mx-auto text-center w-50 m-0 pb-3 pb-lg-0" href="/">
                 
-                    <span class="fs-4 tracking-wide"></span>
+                    <img src="/static/uploads/img_20260307001136.JPG" alt="Meu blog cms" style="height: 50px; object-fit: contain;">
                 
             </a>
 
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-
-                <ul class="navbar-nav me-auto gap-1 gap-lg-3">
-                    <li class="nav-item">
-                        <a class="nav-link text-white fw-bold" href="/" style="font-size: 0.95rem;">Início</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link text-white fw-bold" href="/categoria/blog/" style="font-size: 0.95rem;">Blog</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link text-white fw-bold" href="/categoria/tecnologia/" style="font-size: 0.95rem;">Tecnologia</a>
-                    </li>
-                    
-                </ul>
-
-                <form class="d-flex position-relative mt-3 mt-lg-0" onsubmit="event.preventDefault();" style="width: 100%; max-width: 320px;">
-                    <div class="input-group">
-                        <input class="form-control border-0 shadow-none py-2 ps-3" type="search" id="searchInput" placeholder="Pesquisar por..." autocomplete="off" style="font-size: 0.95rem; border-radius: 4px 0 0 4px;">
-                        <span class="input-group-text bg-white border-0 text-muted pe-3" style="border-radius: 0 4px 4px 0;">
-                            <i class="bi bi-search"></i>
-                        </span>
-                    </div>
-
-                    <div id="searchResults" class="list-group position-absolute w-100 shadow-lg rounded-3 d-none" style="top: 110%; z-index: 1000; max-height: 350px; overflow-y: auto;"></div>
+            <div class="w-25 d-flex justify-content-end position-relative mt-3 mt-lg-0 w-100-mobile">
+                <form class="d-flex align-items-center w-100" onsubmit="event.preventDefault();" style="max-width: 250px; margin-left: auto;">
+                    <i class="bi bi-search text-muted me-2"></i>
+                    <input class="form-control search-input" type="search" id="searchInput" placeholder="Buscar tendências..." autocomplete="off">
                 </form>
-
+                <div id="searchResults" class="list-group position-absolute w-100 shadow-sm d-none" style="top: 100%; right: 0; z-index: 1000; border-radius: 0; border: 1px solid #eee;"></div>
             </div>
         </div>
-    </nav>
 
-    <main class="container mt-5 mb-5 flex-grow-1">
-        <header class="mb-5 text-center">
-            <h1 class="display-4 fw-bold text-dark"></h1>
-            <p class="lead text-muted"></p>
-        </header>
-
-        <div class="row">
-            
-            <div class="col-md-6 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
-                    
-                    <a href="/ddfdf/">
-                        <img src="/static/uploads/img_20260307001110.JPG" class="card-img-top rounded-top" style="height: 200px; object-fit: cover;">
-                    </a>
-                    
-                    <div class="card-body">
-                        <h2 class="h5 card-title">
-                            <a href="/ddfdf/" class="text-decoration-none text-dark">ddfdf</a>
-                        </h2>
-                        <p class="text-muted small mb-0">07/03/2026</p>
-                    </div>
+        <div class="container mt-3 mt-lg-4 border-top pt-3 d-flex justify-content-center">
+            <nav class="navbar navbar-expand-lg p-0">
+                <button class="navbar-toggler border-0 mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span> Menu
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav gap-2 gap-lg-4">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        
+                        <li class="nav-item"><a class="nav-link" href="/categoria/blog/">Blog</a></li>
+                        
+                        <li class="nav-item"><a class="nav-link" href="/categoria/tecnologia/">Tecnologia</a></li>
+                        
+                    </ul>
                 </div>
-            </div>
-            
+            </nav>
         </div>
+    </header>
+
+    <main class="container my-5 flex-grow-1">
+
+        <div class="row g-5">
+            
+                
+                <div class="col-12 mb-5">
+                    <article class="fashion-card text-center">
+                        
+                        <a href="/ddfdf/" class="d-block img-wrapper mb-4">
+                            <img src="/static/uploads/img_20260307001110.JPG" class="w-100 img-fluid" style="height: 60vh; min-height: 400px; object-fit: cover;">
+                        </a>
+                        
+                        <div class="mx-auto" style="max-width: 800px;">
+                            <div class="mb-3">
+                                
+                                    
+                                    <a href="/categoria/blog/" class="post-category">Blog</a>
+                                    
+                                
+                                    
+                                
+                            </div>
+                            <h2 class="display-4 fw-bold mb-3">
+                                <a href="/ddfdf/" class="text-decoration-none text-dark">ddfdf</a>
+                            </h2>
+                            <p class="text-muted mb-4 px-lg-5" style="font-size: 1.1rem; line-height: 1.8;">## What is Lorem Ipsum? **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the...</p>
+                            <a href="/ddfdf/" class="btn btn-glamour">Ler Artigo Completo</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="row g-5"> 
+            
+             </div>
 
         
     </main>
 
-    <footer class="text-light py-5 mt-auto" style="background-color: #212529;">
-        <div class="container">
-            <div class="row gy-4 text-center text-md-start">
-
-                <div class="col-lg-5 pe-lg-5">
-                    <p class="text-uppercase fw-bold mb-3 d-flex align-items-center justify-content-center justify-content-md-start">
-                        
-                        
-                    </p>
-
-                    <p class="text-light opacity-75 small lh-lg mb-0">
-                        
-                    </p>
-                </div>
-
-                <div class="col-lg-3">
-                    <p class="text-uppercase fw-bold mb-3 text-white-50" style="font-size: 0.9rem; letter-spacing: 1px;">Navegação</p>
-                    <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                        <li><a href="/" class="text-decoration-none text-light opacity-75 custom-hover"><i class="bi bi-chevron-right small me-1"></i> Início</a></li>
-
-                        
-                    </ul>
-                </div>
-
-                <div class="col-lg-4">
-                    <p class="text-uppercase fw-bold mb-3 text-white-50" style="font-size: 0.9rem; letter-spacing: 1px;">Siga-nos</p>
-                    <div class="d-flex gap-2 justify-content-center justify-content-md-start flex-wrap">
-
-                        
-
-                        
-
-                        
-
-                        
-
-                    </div>
-                </div>
-
+    <footer class="py-5 mt-auto border-top" style="background-color: #212529; color: #ffffff;">
+        <div class="container text-center">
+            <div class="mb-4">
+                
+                    <img src="/static/uploads/img_20260307001146.JPG" alt="Logo Rodapé" style="height: 40px; object-fit: contain;">
+                
             </div>
 
-            <hr class="mt-5 mb-4 border-secondary opacity-25">
+            <p class="text-muted mx-auto mb-4" style="max-width: 600px; font-size: 0.9rem; line-height: 1.8;">Um espaço dedicado a compartilhar ideias, artigos e tutoriais. Nossa missão é entregar conteúdo de valor e com qualidade para todos os nossos leitores.</p>
 
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="small">
-                        
-                    </p>
-                </div>
-
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="https://www.instagram.com/" class="text-dark fs-5"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.facebook.com/" class="text-dark fs-5"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.youtube.com/feed/subscriptions" class="text-dark fs-5"><i class="bi bi-youtube"></i></a>
+                <a href="https://x.com/" class="text-dark fs-5"><i class="bi bi-twitter-x"></i></a>
             </div>
+
+            <p class="text-muted small text-uppercase mb-0" style="letter-spacing: 1px; font-size: 0.7rem;">© 2026 Meu Site - Todos os direitos reservados.</p>
         </div>
     </footer>
 
     
-
-    <style>
-        .custom-hover:hover { opacity: 1 !important; text-decoration: underline !important; }
-        #searchResults::-webkit-scrollbar { width: 6px; }
-        #searchResults::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
-    </style>
+    <div id="cookie-banner" style="display: none; position: fixed; z-index: 9999; background-color: #212529; color: #ffffff; padding: 20px 30px; box-shadow: 0 -10px 30px rgba(0,0,0,0.05); border-top: 1px solid #f0e6e6; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; font-family: 'Montserrat', sans-serif;
+         bottom: 20px; left: 20px; max-width: 400px; border-radius: 0; flex-direction: column; align-items: flex-start; border: 1px solid #f0e6e6;
+        
+    ">
+        <div style="flex: 1; min-width: 250px;">
+            <p style="margin: 0; font-size: 0.8rem; line-height: 1.6;">
+                Utilizamos cookies para melhorar a sua experiência no site. Ao continuar navegando, você concorda com a nossa Política de Privacidade.
+                
+            </p>
+        </div>
+        <button id="cookie-btn" class="btn-glamour border-0" style="padding: 8px 20px;">
+            Entendi
+        </button>
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var banner = document.getElementById('cookie-banner'); var btn = document.getElementById('cookie-btn');
+        var cookieName = 'lgpd_cookie_consent'; var cookieDays = parseInt("30");
+        if (!document.cookie.split('; ').find(row => row.startsWith(cookieName + '='))) { banner.style.display = 'flex'; }
+        btn.addEventListener('click', function() {
+            banner.style.display = 'none'; var d = new Date(); d.setTime(d.getTime() + (cookieDays * 24 * 60 * 60 * 1000));
+            document.cookie = cookieName + "=accepted; expires="+ d.toUTCString() + "; path=/";
+        });
+    });
+    </script>
+    
 
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
-            const searchInput = document.getElementById('searchInput');
-            const searchResults = document.getElementById('searchResults');
+            const searchInput = document.getElementById('searchInput'); const searchResults = document.getElementById('searchResults');
             let postsData = [];
-
-            try {
-                const response = await fetch('/posts.json');
-                if (response.ok) {
-                    postsData = await response.json();
-                }
-            } catch (error) {
-                console.error("Erro ao carregar o banco de pesquisa.");
-            }
+            try { const response = await fetch('/posts.json'); if (response.ok) { postsData = await response.json(); } } catch (e) {}
 
             searchInput.addEventListener('input', (e) => {
-                const query = e.target.value.toLowerCase().trim();
-                searchResults.innerHTML = '';
-
-                if (query.length < 2) {
-                    searchResults.classList.add('d-none');
-                    return;
-                }
-
-                const filteredPosts = postsData.filter(post =>
-                    post.title.toLowerCase().includes(query)
-                );
-
+                const query = e.target.value.toLowerCase().trim(); searchResults.innerHTML = '';
+                if (query.length < 2) { searchResults.classList.add('d-none'); return; }
+                const filteredPosts = postsData.filter(post => post.title.toLowerCase().includes(query));
                 if (filteredPosts.length > 0) {
                     filteredPosts.forEach(post => {
-                        const link = document.createElement('a');
-                        link.href = `/${post.slug}/`;
-                        link.className = 'list-group-item list-group-item-action d-flex align-items-center border-0 border-bottom';
-
-                        const imgHtml = post.image
-                            ? `<img src="${post.image}" class="rounded me-3 object-fit-cover" style="width: 45px; height: 45px;">`
-                            : `<div class="bg-secondary rounded me-3 opacity-25" style="width: 45px; height: 45px;"></div>`;
-
-                        link.innerHTML = `
-                            ${imgHtml}
-                            <div class="overflow-hidden">
-                                <h6 class="mb-0 text-truncate text-dark fw-bold" style="font-size: 0.9rem;">${post.title}</h6>
-                                <small class="text-muted" style="font-size: 0.75rem;">${post.date}</small>
-                            </div>
-                        `;
+                        const link = document.createElement('a'); link.href = `/${post.slug}/`; link.className = 'list-group-item list-group-item-action border-0 border-bottom p-3 d-flex align-items-center bg-white';
+                        const imgHtml = post.image ? `<img src="${post.image}" class="me-3 object-fit-cover" style="width: 50px; height: 50px;">` : ``;
+                        link.innerHTML = `${imgHtml}<div class="overflow-hidden"><h6 class="mb-0 text-truncate text-dark" style="font-family: 'Playfair Display', serif; font-size: 1rem;">${post.title}</h6><small class="text-muted" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px;">${post.date}</small></div>`;
                         searchResults.appendChild(link);
                     });
                     searchResults.classList.remove('d-none');
                 } else {
-                    searchResults.innerHTML = '<div class="list-group-item text-muted text-center py-3 border-0 small">Nenhum artigo encontrado.</div>';
+                    searchResults.innerHTML = '<div class="list-group-item text-muted text-center py-3 border-0 small font-montserrat">Nenhuma publicação encontrada.</div>';
                     searchResults.classList.remove('d-none');
                 }
             });
 
             document.addEventListener('click', (e) => {
-                if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-                    searchResults.classList.add('d-none');
-                }
+                if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) { searchResults.classList.add('d-none'); }
             });
         });
     </script>
