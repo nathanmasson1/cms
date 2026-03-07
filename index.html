@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Cms visao verde AI</title>
 
-    <meta name="description" content="">
+    <meta name="description" content="minha descriçao do Cms visao verde AI">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
-    <meta property="og:site_name" content="">
+    <meta property="og:title" content="Cms visao verde AI">
+    <meta property="og:description" content="minha descriçao do Cms visao verde AI">
+    <meta property="og:site_name" content="Cms visao verde AI">
 
     
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://cms.visaoverdeai.com.br/static/uploads/img_20260307111617.JPG">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://cms.visaoverdeai.com.br/static/uploads/img_20260307111617.JPG">
     
 
+    
+    <link rel="icon" href="/static/uploads/img_20260307111619.JPG" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/static/uploads/img_20260307111619.JPG">
     
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -25,12 +30,12 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "",
-      "url": "/",
-      "description": "",
+      "name": "Cms visao verde AI",
+      "url": "https://cms.visaoverdeai.com.br/",
+      "description": "minha descriçao do Cms visao verde AI",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "/?q={search_term_string}",
+        "target": "https://cms.visaoverdeai.com.br/?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }
@@ -44,7 +49,7 @@
 
             <a class="navbar-brand fw-bold d-flex align-items-center me-lg-5" href="/">
                 
-                    <span class="fs-4 tracking-wide"></span>
+                    <img src="/static/uploads/img_20260307111617.JPG" alt="Cms visao verde AI" style="height: 40px; object-fit: contain;">
                 
             </a>
 
@@ -82,8 +87,8 @@
 
     <main class="container mt-5 mb-5 flex-grow-1">
         <header class="mb-5 text-center">
-            <h1 class="display-4 fw-bold text-dark"></h1>
-            <p class="lead text-muted"></p>
+            <h1 class="display-4 fw-bold text-dark">Cms visao verde AI</h1>
+            <p class="lead text-muted">minha descriçao do Cms visao verde AI</p>
         </header>
 
         <div class="row">
@@ -124,11 +129,13 @@
                 <div class="col-lg-5 pe-lg-5">
                     <p class="text-uppercase fw-bold mb-3 d-flex align-items-center justify-content-center justify-content-md-start">
                         
+                            <img src="/static/uploads/img_20260307111617.JPG" alt="Logo" style="height: 35px; object-fit: contain;" class="me-2 bg-white rounded p-1">
                         
+                        Cms visao verde AI
                     </p>
 
                     <p class="text-light opacity-75 small lh-lg mb-0">
-                        
+                        Um espaço dedicado a compartilhar ideias, artigos e tutoriais. Nossa missão é entregar conteúdo de valor e com qualidade para todos os nossos leitores.
                     </p>
                 </div>
 
@@ -163,7 +170,7 @@
             <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start">
                     <p class="small">
-                        
+                        © 2026 Meu Site - Todos os direitos reservados.
                     </p>
                 </div>
 
@@ -171,6 +178,45 @@
         </div>
     </footer>
 
+    
+    <div id="cookie-banner" style="display: none; position: fixed; z-index: 9999; background-color: #212529; color: #ffffff; padding: 20px; box-shadow: 0 -4px 10px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; font-family: sans-serif;
+         bottom: 0; left: 0; width: 100%;
+        
+    ">
+        <div style="flex: 1; min-width: 250px;">
+            <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+                Utilizamos cookies para melhorar a sua experiência no site. Ao continuar navegando, você concorda com a nossa Política de Privacidade.
+
+                
+            </p>
+        </div>
+        <button id="cookie-btn" style="background-color: #0d6efd; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: bold; white-space: nowrap; transition: 0.2s; opacity: 0.9;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'">
+            Entendi
+        </button>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var banner = document.getElementById('cookie-banner');
+        var btn = document.getElementById('cookie-btn');
+        var cookieName = 'lgpd_cookie_consent';
+        var cookieDays = parseInt("30");
+
+        // Verifica se o cookie já existe no navegador do usuário
+        if (!document.cookie.split('; ').find(row => row.startsWith(cookieName + '='))) {
+            banner.style.display = 'flex'; // Mostra se não tiver o cookie
+        }
+
+        // Ação de clicar no botão "Entendi"
+        btn.addEventListener('click', function() {
+            banner.style.display = 'none';
+            var d = new Date();
+            d.setTime(d.getTime() + (cookieDays * 24 * 60 * 60 * 1000)); // Converte dias em milissegundos
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = cookieName + "=accepted;" + expires + ";path=/";
+        });
+    });
+    </script>
     
 
     <style>
