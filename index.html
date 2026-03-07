@@ -44,24 +44,36 @@
     }
     </script>
 
+    <style>
+        body { background-color: #f6f6f6; }
+        .custom-hover:hover { opacity: 1 !important; text-decoration: underline !important; }
+        #searchResults::-webkit-scrollbar { width: 6px; }
+        #searchResults::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
+
+        /* Estilos do Novo Layout Mosaico */
+        .bg-gradient-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+        }
+        .img-zoom { transition: transform 0.4s ease; }
+        .hero-card:hover .img-zoom { transform: scale(1.05); }
+        .badge-editorial { font-size: 0.75rem; background-color: white; color: #4eb68e; border: 1px solid #4eb68e; border-radius: 2px; }
+        .text-editorial { color: #4eb68e; }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
 
     <nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #2b5c92;">
         <div class="container py-2">
-
             <a class="navbar-brand fw-bold d-flex align-items-center me-lg-5" href="/">
                 
                     <img src="/static/uploads/img_20260307122851.jpg" alt="My Blog" style="height: 40px; object-fit: contain;">
                 
             </a>
-
             <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
-
                 <ul class="navbar-nav me-auto gap-1 gap-lg-3">
                     <li class="nav-item">
                         <a class="nav-link text-white fw-bold" href="/" style="font-size: 0.95rem;">Início</a>
@@ -72,7 +84,6 @@
                     </li>
                     
                 </ul>
-
                 <form class="d-flex position-relative mt-3 mt-lg-0" onsubmit="event.preventDefault();" style="width: 100%; max-width: 320px;">
                     <div class="input-group">
                         <input class="form-control border-0 shadow-none py-2 ps-3" type="search" id="searchInput" placeholder="Pesquisar por..." autocomplete="off" style="font-size: 0.95rem; border-radius: 4px 0 0 4px;">
@@ -80,71 +91,93 @@
                             <i class="bi bi-search"></i>
                         </span>
                     </div>
-
                     <div id="searchResults" class="list-group position-absolute w-100 shadow-lg rounded-3 d-none" style="top: 110%; z-index: 1000; max-height: 350px; overflow-y: auto;"></div>
                 </form>
-
             </div>
         </div>
     </nav>
 
-    <main class="container mt-5 mb-5 flex-grow-1">
-        <header class="mb-5 text-center">
-            <h1 class="display-4 fw-bold text-dark">My Blog</h1>
-            <p class="lead text-muted">sdsddsds</p>
-        </header>
+    <main class="container mt-4 mb-5 flex-grow-1">
 
-        <div class="row">
-            
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
+        
+
+            <div class="row g-2 g-md-3 mb-5">
+                
+                <div class="col-lg-7">
+                    <a href="/lllll/" class="d-block position-relative overflow-hidden hero-card w-100" style="height: 100%; min-height: 420px;">
+                        
+                        <img src="/static/uploads/lllll.jpg" alt="lllll" class="position-absolute w-100 h-100 img-zoom" style="object-fit: cover; z-index: 1;">
+                        
+
+                        <div class="position-absolute bottom-0 start-0 w-100 p-4 bg-gradient-overlay d-flex flex-column justify-content-end" style="z-index: 2; height: 60%;">
+                            <div>
+                                
+                                    <span class="badge badge-editorial mb-2 px-2 py-1">Blog</span>
+                                
+                            </div>
+                            <h2 class="text-white fw-bold mb-2 lh-sm line-clamp-2" style="font-size: clamp(1.5rem, 3vw, 2.2rem); text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">lllll</h2>
+                            <div class="text-light small fw-semibold d-flex align-items-center gap-3 opacity-75">
+                                <span><i class="bi bi-person-fill"></i> My Blog</span>
+                                <span><i class="bi bi-calendar3"></i> 07/03/2026</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-5 d-flex flex-column gap-2 gap-md-3">
                     
-                    <a href="/lllll/">
-                        <img src="/static/uploads/lllll.jpg" class="card-img-top rounded-top" style="height: 200px; object-fit: cover;">
+                    <a href="/meu-titulo-custom/" class="d-block position-relative overflow-hidden hero-card flex-grow-1 w-100" style="min-height: 200px;">
+                        
+                        <img src="/static/uploads/meu-titulo-custom.jpg" alt="meu titulo custom" class="position-absolute w-100 h-100 img-zoom" style="object-fit: cover; z-index: 1;">
+                        
+
+                        <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-gradient-overlay d-flex flex-column justify-content-end" style="z-index: 2; height: 75%;">
+                            <div>
+                                
+                                    <span class="badge badge-editorial mb-2 px-2 py-1" style="font-size: 0.65rem;">Blog</span>
+                                
+                            </div>
+                            <h3 class="text-white fw-bold h5 mb-2 lh-sm line-clamp-2" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">meu titulo custom</h3>
+                            <div class="text-light fw-semibold d-flex align-items-center gap-3 opacity-75" style="font-size: 0.75rem;">
+                                <span><i class="bi bi-person-fill"></i> My Blog</span>
+                                <span><i class="bi bi-calendar3"></i> 07/03/2026</span>
+                            </div>
+                        </div>
                     </a>
                     
-                    <div class="card-body">
-                        <h2 class="h5 card-title">
-                            <a href="/lllll/" class="text-decoration-none text-dark">lllll</a>
-                        </h2>
-                        <p class="text-muted small mb-0">07/03/2026</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
-                    
-                    <a href="/meu-titulo-custom/">
-                        <img src="/static/uploads/meu-titulo-custom.jpg" class="card-img-top rounded-top" style="height: 200px; object-fit: cover;">
+                    <a href="/ola/" class="d-block position-relative overflow-hidden hero-card flex-grow-1 w-100" style="min-height: 200px;">
+                        
+                        <img src="/static/uploads/ola.jpg" alt="ola" class="position-absolute w-100 h-100 img-zoom" style="object-fit: cover; z-index: 1;">
+                        
+
+                        <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-gradient-overlay d-flex flex-column justify-content-end" style="z-index: 2; height: 75%;">
+                            <div>
+                                
+                                    <span class="badge badge-editorial mb-2 px-2 py-1" style="font-size: 0.65rem;">Blog</span>
+                                
+                            </div>
+                            <h3 class="text-white fw-bold h5 mb-2 lh-sm line-clamp-2" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">ola</h3>
+                            <div class="text-light fw-semibold d-flex align-items-center gap-3 opacity-75" style="font-size: 0.75rem;">
+                                <span><i class="bi bi-person-fill"></i> My Blog</span>
+                                <span><i class="bi bi-calendar3"></i> 07/03/2026</span>
+                            </div>
+                        </div>
                     </a>
                     
-                    <div class="card-body">
-                        <h2 class="h5 card-title">
-                            <a href="/meu-titulo-custom/" class="text-decoration-none text-dark">meu titulo custom</a>
-                        </h2>
-                        <p class="text-muted small mb-0">07/03/2026</p>
-                    </div>
                 </div>
             </div>
-            
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
-                    
-                    <a href="/ola/">
-                        <img src="/static/uploads/ola.jpg" class="card-img-top rounded-top" style="height: 200px; object-fit: cover;">
-                    </a>
-                    
-                    <div class="card-body">
-                        <h2 class="h5 card-title">
-                            <a href="/ola/" class="text-decoration-none text-dark">ola</a>
-                        </h2>
-                        <p class="text-muted small mb-0">07/03/2026</p>
-                    </div>
-                </div>
+
+            <h3 class="fw-bold mb-4 text-editorial display-6">Destaques</h3>
+
+            <div class="row g-4 mb-5">
+                
             </div>
-            
-        </div>
+
+            <div class="row g-4 mb-4 border-top pt-4">
+                
+            </div>
+
+        
 
         
     </main>
@@ -152,7 +185,6 @@
     <footer class="text-light py-5 mt-auto" style="background-color: #212529;">
         <div class="container">
             <div class="row gy-4 text-center text-md-start">
-
                 <div class="col-lg-5 pe-lg-5">
                     <p class="text-uppercase fw-bold mb-3 d-flex align-items-center justify-content-center justify-content-md-start">
                         
@@ -160,17 +192,14 @@
                         
                         My Blog
                     </p>
-
                     <p class="text-light opacity-75 small lh-lg mb-0">
                         Um espaço dedicado a compartilhar ideias, artigos e tutoriais. Nossa missão é entregar conteúdo de valor e com qualidade para todos os nossos leitores.
                     </p>
                 </div>
-
                 <div class="col-lg-3">
                     <p class="text-uppercase fw-bold mb-3 text-white-50" style="font-size: 0.9rem; letter-spacing: 1px;">Navegação</p>
                     <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
                         <li><a href="/" class="text-decoration-none text-light opacity-75 custom-hover"><i class="bi bi-chevron-right small me-1"></i> Início</a></li>
-
                         
                         <li><a href="/cookies/" class="text-decoration-none text-light opacity-75 custom-hover"><i class="bi bi-chevron-right small me-1"></i> Cookies</a></li>
                         
@@ -182,41 +211,31 @@
                         
                     </ul>
                 </div>
-
                 <div class="col-lg-4">
                     <p class="text-uppercase fw-bold mb-3 text-white-50" style="font-size: 0.9rem; letter-spacing: 1px;">Siga-nos</p>
                     <div class="d-flex gap-2 justify-content-center justify-content-md-start flex-wrap">
-
                         
                         <a href="https://www.instagram.com/" target="_blank" rel="nofollow noopener noreferrer" class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center custom-hover" style="width: 42px; height: 42px;" title="Instagram">
                             <i class="bi bi-instagram"></i>
                         </a>
                         
-
                         
                         <a href="https://www.facebook.com/" target="_blank" rel="nofollow noopener noreferrer" class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center custom-hover" style="width: 42px; height: 42px;" title="Facebook">
                             <i class="bi bi-facebook"></i>
                         </a>
                         
-
                         
-
                         
-
                     </div>
                 </div>
-
             </div>
-
             <hr class="mt-5 mb-4 border-secondary opacity-25">
-
             <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start">
                     <p class="small">
                         © 2026 Meu Site - Todos os direitos reservados.
                     </p>
                 </div>
-
             </div>
         </div>
     </footer>
@@ -247,28 +266,20 @@
         var cookieName = 'lgpd_cookie_consent';
         var cookieDays = parseInt("30");
 
-        // Verifica se o cookie já existe no navegador do usuário
         if (!document.cookie.split('; ').find(row => row.startsWith(cookieName + '='))) {
-            banner.style.display = 'flex'; // Mostra se não tiver o cookie
+            banner.style.display = 'flex';
         }
 
-        // Ação de clicar no botão "Entendi"
         btn.addEventListener('click', function() {
             banner.style.display = 'none';
             var d = new Date();
-            d.setTime(d.getTime() + (cookieDays * 24 * 60 * 60 * 1000)); // Converte dias em milissegundos
+            d.setTime(d.getTime() + (cookieDays * 24 * 60 * 60 * 1000));
             var expires = "expires="+ d.toUTCString();
             document.cookie = cookieName + "=accepted;" + expires + ";path=/";
         });
     });
     </script>
     
-
-    <style>
-        .custom-hover:hover { opacity: 1 !important; text-decoration: underline !important; }
-        #searchResults::-webkit-scrollbar { width: 6px; }
-        #searchResults::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
-    </style>
 
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
