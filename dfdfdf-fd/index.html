@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dfdfdf fddf - Meu blog cms</title>
+
+    
+    <link rel="icon" href="/static/uploads/img_20260307001139.JPG" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/static/uploads/img_20260307001139.JPG">
+    
+
+    <meta name="description" content="ddf">
+    <meta name="author" content="Nathan">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="dfdfdf fddf">
+    <meta property="og:description" content="ddf">
+    <meta property="og:site_name" content="Meu blog cms">
+    <meta property="article:published_time" content="2026-03-07T03:13:43-03:00" />
+
+    
+    <meta property="article:modified_time" content="2026-03-07T03:13:43-03:00" />
+    
+
+    
+    <meta property="og:image" content="/static/uploads/img_20260307001340.JPG">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="/static/uploads/img_20260307001340.JPG">
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --glamour-bg: #fffbfb;
+            --glamour-text: #2c2c2c;
+            --glamour-accent: #d4af37;
+        }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--glamour-bg); color: var(--glamour-text); }
+        h1, h2, h3, h4, h5, h6, .navbar-brand { font-family: 'Playfair Display', serif; }
+
+        /* Navbar Chic (Idêntica à da Home) */
+        .navbar-glamour { background-color: #ffffff; border-bottom: 1px solid #f0e6e6; padding: 1.5rem 0; }
+        .nav-link { text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; font-weight: 500; color: #555 !important; transition: color 0.3s; }
+        .nav-link:hover { color: var(--glamour-accent) !important; }
+        .search-input { border: none; border-bottom: 1px solid #ccc; border-radius: 0; background: transparent; padding-left: 0; font-family: 'Montserrat'; font-size: 0.85rem; }
+        .search-input:focus { outline: none; box-shadow: none; border-bottom-color: var(--glamour-accent); }
+
+        /* Estilos do Artigo */
+        .article-header { text-align: center; max-width: 800px; margin: 0 auto 3rem auto; }
+        .post-category { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 3px; color: var(--glamour-accent); font-weight: 600; text-decoration: none; display: inline-block; margin-bottom: 1.5rem; }
+        .article-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; color: #111; }
+        .article-meta { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #777; }
+
+        /* Corpo do Texto Editorial */
+        .article-content { max-width: 720px; margin: 0 auto; font-size: 1.1rem; line-height: 2; color: #333; font-weight: 300; }
+
+        /* Letra Capitular (Dropcap) */
+        .article-content > p:first-of-type::first-letter { font-family: 'Playfair Display', serif; font-size: 4rem; float: left; margin-top: -0.1em; margin-right: 0.15em; line-height: 0.8; color: var(--glamour-accent); font-weight: bold; }
+
+        .article-content img { max-width: 100%; height: auto; margin: 3rem 0; border-radius: 0; }
+        .article-content h2, .article-content h3 { font-family: 'Playfair Display', serif; font-weight: 600; margin-top: 3rem; margin-bottom: 1.5rem; color: #111; }
+        .article-content blockquote { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-style: italic; line-height: 1.5; text-align: center; margin: 3rem auto; padding: 0 2rem; color: var(--glamour-accent); }
+
+        /* Tags e Autor */
+        .tag-btn { text-transform: uppercase; font-size: 0.65rem; letter-spacing: 1px; color: #555; border: 1px solid #ddd; padding: 5px 15px; border-radius: 50px; text-decoration: none; transition: 0.3s; }
+        .tag-btn:hover { border-color: var(--glamour-accent); color: var(--glamour-accent); }
+        .author-box { border-top: 1px solid #f0e6e6; border-bottom: 1px solid #f0e6e6; padding: 3rem 0; margin-top: 4rem; }
+
+        /* Botões */
+        .btn-glamour { background-color: var(--glamour-text); color: white; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; border-radius: 0; padding: 10px 24px; transition: 0.3s; }
+        .btn-glamour:hover { background-color: var(--glamour-accent); color: white; }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/dfdfdf-fd/"
+      },
+      "headline": "dfdfdf fddf",
+      "description": "ddf",
+      
+      "image": "/static/uploads/img_20260307001340.JPG",
+      
+      "datePublished": "2026-03-07",
+      "dateModified": "2026-03-07",
+      "author": {
+        "@type": "Person",
+        "name": "Nathan"
+        
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Meu blog cms"
+        
+        ,"logo": {
+          "@type": "ImageObject",
+          "url": "/static/uploads/img_20260307001136.JPG"
+        }
+        
+      }
+    }
+    </script>
+
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header class="navbar-glamour sticky-top shadow-sm">
+        <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between">
+            <div class="d-none d-lg-flex gap-3 align-items-center w-25">
+                <a href="/" class="text-dark text-decoration-none text-uppercase small fw-bold" style="letter-spacing: 1px;"><i class="bi bi-arrow-left"></i> Voltar</a>
+            </div>
+
+            <a class="navbar-brand text-dark mx-auto text-center w-50 m-0 pb-3 pb-lg-0" href="/">
+                
+                    <img src="/static/uploads/img_20260307001136.JPG" alt="Meu blog cms" style="height: 50px; object-fit: contain;">
+                
+            </a>
+
+            <div class="w-25 d-flex justify-content-end position-relative mt-3 mt-lg-0 w-100-mobile">
+                <form class="d-flex align-items-center w-100" onsubmit="event.preventDefault();" style="max-width: 250px; margin-left: auto;">
+                    <i class="bi bi-search text-muted me-2"></i>
+                    <input class="form-control search-input" type="search" id="searchInput" placeholder="Pesquisar..." autocomplete="off">
+                </form>
+                <div id="searchResults" class="list-group position-absolute w-100 shadow-sm d-none" style="top: 100%; right: 0; z-index: 1000; border-radius: 0;"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5 flex-grow-1">
+
+        <header class="article-header mt-4">
+            
+                
+                <a href="/categoria/blog/" class="post-category">Blog</a>
+                
+            
+                
+            
+
+            <h1 class="article-title">dfdfdf fddf</h1>
+
+            <div class="article-meta mt-4 d-flex justify-content-center align-items-center gap-3">
+                
+                    <span class="fw-bold text-dark">Nathan</span>
+                    <span class="text-muted">|</span>
+                
+                <span class="text-muted">07 . 03 . 2026</span>
+            </div>
+        </header>
+
+        
+        <div class="text-center mb-5 pb-4">
+            <img src="/static/uploads/img_20260307001340.JPG" class="img-fluid w-100" style="max-height: 75vh; object-fit: cover; object-position: center;">
+        </div>
+        
+
+        <article class="article-content">
+            <p>ddf</p>
+        </article>
+
+        
+
+        
+        <div class="article-content author-box d-flex flex-column flex-md-row align-items-center text-center text-md-start gap-4">
+            
+            <div>
+                <span class="text-uppercase" style="font-size: 0.65rem; letter-spacing: 2px; color: var(--glamour-accent);">O Autor</span>
+                <h4 class="fw-bold mb-2 mt-1" style="font-family: 'Playfair Display', serif;">Nathan</h4>
+                <p class="text-muted mb-0 font-montserrat" style="font-size: 0.9rem; line-height: 1.6;"></p>
+
+                <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+
+        
+        <section class="mt-5 pt-5">
+            <div class="text-center mb-5">
+                <h3 class="fw-bold text-uppercase" style="letter-spacing: 2px; font-size: 1.2rem;">Descubra Mais</h3>
+                <div style="width: 40px; height: 1px; background-color: var(--glamour-accent); margin: 15px auto;"></div>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-md-4">
+                    <article class="text-center">
+                        
+                        <a href="/ddfdf/" class="d-block overflow-hidden mb-3">
+                            <img src="/static/uploads/img_20260307001110.JPG" class="w-100 img-fluid" style="height: 250px; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                        </a>
+                        
+                        <h4 class="h5 mt-2" style="font-family: 'Playfair Display', serif;">
+                            <a href="/ddfdf/" class="text-dark text-decoration-none">ddfdf</a>
+                        </h4>
+                    </article>
+                </div>
+                
+            </div>
+        </section>
+        
+
+    </main>
+
+    <footer class="py-5 mt-auto border-top" style="background-color: #d2cb04; color: #ffffff;">
+        <div class="container text-center">
+            <div class="mb-4">
+                
+                    <img src="/static/uploads/img_20260307001146.JPG" alt="Logo Rodapé" style="height: 40px; object-fit: contain;">
+                
+            </div>
+
+            <p class="text-muted mx-auto mb-4" style="max-width: 600px; font-size: 0.9rem; line-height: 1.8;">Um espaço dedicado a compartilhar ideias, artigos e tutoriais. Nossa missão é entregar conteúdo de valor e com qualidade para todos os nossos leitores.</p>
+
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="https://www.instagram.com/" class="text-dark fs-5"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.facebook.com/" class="text-dark fs-5"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.youtube.com/feed/subscriptions" class="text-dark fs-5"><i class="bi bi-youtube"></i></a>
+                <a href="https://x.com/" class="text-dark fs-5"><i class="bi bi-twitter-x"></i></a>
+            </div>
+
+            <p class="text-muted small text-uppercase mb-0" style="letter-spacing: 1px; font-size: 0.7rem;">© 2026 Meu Site - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    
+    <div id="cookie-banner" style="display: none; position: fixed; z-index: 9999; background-color: #212529; color: #ffffff; padding: 20px 30px; box-shadow: 0 -10px 30px rgba(0,0,0,0.05); border-top: 1px solid #f0e6e6; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; font-family: 'Montserrat', sans-serif;
+         bottom: 20px; left: 20px; max-width: 400px; border-radius: 0; flex-direction: column; align-items: flex-start; border: 1px solid #f0e6e6;
+        
+    ">
+        <div style="flex: 1; min-width: 250px;">
+            <p style="margin: 0; font-size: 0.8rem; line-height: 1.6;">
+                Utilizamos cookies para melhorar a sua experiência no site. Ao continuar navegando, você concorda com a nossa Política de Privacidade.
+                
+            </p>
+        </div>
+        <button id="cookie-btn" class="btn-glamour border-0" style="padding: 8px 20px;">
+            Entendi
+        </button>
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var banner = document.getElementById('cookie-banner'); var btn = document.getElementById('cookie-btn');
+        var cookieName = 'lgpd_cookie_consent'; var cookieDays = parseInt("30");
+        if (!document.cookie.split('; ').find(row => row.startsWith(cookieName + '='))) { banner.style.display = 'flex'; }
+        btn.addEventListener('click', function() {
+            banner.style.display = 'none'; var d = new Date(); d.setTime(d.getTime() + (cookieDays * 24 * 60 * 60 * 1000));
+            document.cookie = cookieName + "=accepted; expires="+ d.toUTCString() + "; path=/";
+        });
+    });
+    </script>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const searchInput = document.getElementById('searchInput'); const searchResults = document.getElementById('searchResults');
+            let postsData = [];
+            try { const response = await fetch('/posts.json'); if (response.ok) { postsData = await response.json(); } } catch (e) {}
+
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase().trim(); searchResults.innerHTML = '';
+                if (query.length < 2) { searchResults.classList.add('d-none'); return; }
+                const filteredPosts = postsData.filter(post => post.title.toLowerCase().includes(query));
+                if (filteredPosts.length > 0) {
+                    filteredPosts.forEach(post => {
+                        const link = document.createElement('a'); link.href = `/${post.slug}/`; link.className = 'list-group-item list-group-item-action border-0 border-bottom p-3 d-flex align-items-center bg-white';
+                        const imgHtml = post.image ? `<img src="${post.image}" class="me-3 object-fit-cover" style="width: 50px; height: 50px;">` : ``;
+                        link.innerHTML = `${imgHtml}<div class="overflow-hidden"><h6 class="mb-0 text-truncate text-dark" style="font-family: 'Playfair Display', serif; font-size: 1rem;">${post.title}</h6><small class="text-muted" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px;">${post.date}</small></div>`;
+                        searchResults.appendChild(link);
+                    });
+                    searchResults.classList.remove('d-none');
+                } else {
+                    searchResults.innerHTML = '<div class=\"list-group-item text-muted text-center py-3 border-0 small font-montserrat\">Nenhuma publicação encontrada.</div>';
+                    searchResults.classList.remove('d-none');
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) { searchResults.classList.add('d-none'); }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
