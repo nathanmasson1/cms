@@ -236,6 +236,45 @@
     </footer>
 
     
+    <div id="cookie-banner" style="display: none; position: fixed; z-index: 9999; background-color: #212529; color: #ffffff; padding: 20px; box-shadow: 0 -4px 10px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; font-family: sans-serif;
+         bottom: 20px; left: 20px; max-width: 400px; border-radius: 8px; flex-direction: column; align-items: flex-start;
+        
+    ">
+        <div style="flex: 1; min-width: 250px;">
+            <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+                Utilizamos cookies para melhorar a sua experiência no site. Ao continuar navegando, você concorda com a nossa Política de Privacidade.
+
+                
+            </p>
+        </div>
+        <button id="cookie-btn" style="background-color: #0d6efd; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: bold; white-space: nowrap; transition: 0.2s; opacity: 0.9;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'">
+            Entendi
+        </button>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var banner = document.getElementById('cookie-banner');
+        var btn = document.getElementById('cookie-btn');
+        var cookieName = 'lgpd_cookie_consent';
+        var cookieDays = parseInt("30");
+
+        // Verifica se o cookie já existe no navegador do usuário
+        if (!document.cookie.split('; ').find(row => row.startsWith(cookieName + '='))) {
+            banner.style.display = 'flex'; // Mostra se não tiver o cookie
+        }
+
+        // Ação de clicar no botão "Entendi"
+        btn.addEventListener('click', function() {
+            banner.style.display = 'none';
+            var d = new Date();
+            d.setTime(d.getTime() + (cookieDays * 24 * 60 * 60 * 1000)); // Converte dias em milissegundos
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = cookieName + "=accepted;" + expires + ";path=/";
+        });
+    });
+    </script>
+    
 
     <style>
         .custom-hover:hover { opacity: 1 !important; text-decoration: underline !important; }
