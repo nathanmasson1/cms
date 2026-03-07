@@ -9,6 +9,13 @@
 
     
     <url>
+        <loc>https://cms.visaoverdeai.com.br/politica/</loc>
+        <lastmod>2026-03-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://cms.visaoverdeai.com.br/sobre/</loc>
         <lastmod>2026-03-07</lastmod>
         <changefreq>monthly</changefreq>
