@@ -148,7 +148,8 @@
                             </h2>
 
                             <div class="text-light small fw-semibold d-flex align-items-center gap-3 opacity-75">
-                                <span><i class="bi bi-person-fill"></i> Nome do Site</span>
+                                
+                                <span><i class="bi bi-person-fill"></i> <a href="/autor/mario/" class="text-white text-decoration-none custom-hover">Mario</a></span>
                                 <span><i class="bi bi-calendar3"></i> 08/03/2026</span>
                             </div>
                         </div>
@@ -179,7 +180,8 @@
                             </h3>
 
                             <div class="text-light fw-semibold d-flex align-items-center gap-3 opacity-75" style="font-size: 0.75rem;">
-                                <span><i class="bi bi-person-fill"></i> Nome do Site</span>
+                                
+                                <span><i class="bi bi-person-fill"></i> <a href="/autor/nathan/" class="text-white text-decoration-none custom-hover">Nathan</a></span>
                                 <span><i class="bi bi-calendar3"></i> 08/03/2026</span>
                             </div>
                         </div>
@@ -207,7 +209,8 @@
                             </h3>
 
                             <div class="text-light fw-semibold d-flex align-items-center gap-3 opacity-75" style="font-size: 0.75rem;">
-                                <span><i class="bi bi-person-fill"></i> Nome do Site</span>
+                                
+                                <span><i class="bi bi-person-fill"></i> <a href="/autor/nathan/" class="text-white text-decoration-none custom-hover">Nathan</a></span>
                                 <span><i class="bi bi-calendar3"></i> 08/03/2026</span>
                             </div>
                         </div>
@@ -231,7 +234,8 @@
                             <a href="/pos1/" class="text-decoration-none text-dark custom-hover line-clamp-2">pos1</a>
                         </h3>
                         <div class="text-muted fw-semibold d-flex align-items-center gap-3 mt-auto" style="font-size: 0.8rem;">
-                            <span class="text-dark"><i class="bi bi-person-fill text-muted"></i> Nome do Site</span>
+                            
+                            <span class="text-dark"><i class="bi bi-person-fill text-muted"></i> <a href="/autor/nathan/" class="text-dark text-decoration-none custom-hover">Nathan</a></span>
                             <span><i class="bi bi-calendar3"></i> 08/03/2026</span>
                         </div>
                     </div>
@@ -338,10 +342,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             const searchInput = document.getElementById('searchInput');
             const searchResults = document.getElementById('searchResults');
-            let postsData = null; // Começa vazio
+            let postsData = null;
             let carregandoBanco = false;
 
-            // Só faz o fetch quando o usuário focar no campo de pesquisa
             searchInput.addEventListener('focus', async () => {
                 if (!postsData && !carregandoBanco) {
                     carregandoBanco = true;
@@ -357,7 +360,7 @@
             });
 
             searchInput.addEventListener('input', (e) => {
-                if (!postsData) return; // Se ainda não baixou, não faz nada
+                if (!postsData) return;
 
                 const query = e.target.value.toLowerCase().trim();
                 searchResults.innerHTML = '';
