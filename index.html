@@ -67,7 +67,7 @@
         <div class="container py-2">
             <a class="navbar-brand fw-bold d-flex align-items-center me-lg-5" href="/">
                 
-                    <img src="/static/uploads/img_20260307210144.jpg" alt="My Blog" style="height: 40px; object-fit: contain;">
+                    <img src="/static/uploads/img_20260307210144.jpg" alt="My Blog" width="150" height="40" style="height: 40px; width: auto; object-fit: contain;">
                 
             </a>
             <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -128,7 +128,7 @@
                 <div class="col-lg-7">
                     <div class="d-block position-relative overflow-hidden hero-card w-100" style="height: 100%; min-height: 420px;">
                         
-                        <img src="/static/uploads/34fedfdf.jpg" alt="34fedfdf" title="34fedfdf" class="position-absolute w-100 h-100 img-zoom" style="object-fit: cover; z-index: 1;">
+                        <img src="/static/uploads/34fedfdf.jpg" alt="34fedfdf" title="34fedfdf" class="position-absolute w-100 h-100 img-zoom" style="object-fit: cover; z-index: 1;" fetchpriority="high" loading="eager">
                         
 
                         <div class="position-absolute bottom-0 start-0 w-100 p-4 bg-gradient-overlay d-flex flex-column justify-content-end" style="z-index: 2; height: 60%;">
@@ -319,21 +319,30 @@
     
 
     <script>
-        document.addEventListener('DOMContentLoaded', async () => {
+        document.addEventListener('DOMContentLoaded', () => {
             const searchInput = document.getElementById('searchInput');
             const searchResults = document.getElementById('searchResults');
-            let postsData = [];
+            let postsData = null; // Começa vazio
+            let carregandoBanco = false;
 
-            try {
-                const response = await fetch('/posts.json');
-                if (response.ok) {
-                    postsData = await response.json();
+            // Só faz o fetch quando o usuário focar no campo de pesquisa
+            searchInput.addEventListener('focus', async () => {
+                if (!postsData && !carregandoBanco) {
+                    carregandoBanco = true;
+                    try {
+                        const response = await fetch('/posts.json');
+                        if (response.ok) {
+                            postsData = await response.json();
+                        }
+                    } catch (error) {
+                        console.error("Erro ao carregar o banco de pesquisa.");
+                    }
                 }
-            } catch (error) {
-                console.error("Erro ao carregar o banco de pesquisa.");
-            }
+            });
 
             searchInput.addEventListener('input', (e) => {
+                if (!postsData) return; // Se ainda não baixou, não faz nada
+
                 const query = e.target.value.toLowerCase().trim();
                 searchResults.innerHTML = '';
 
@@ -373,7 +382,7 @@
             });
 
             document.addEventListener('click', (e) => {
-                if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                if (searchInput && searchResults && !searchInput.contains(e.target) && !searchResults.contains(e.target)) {
                     searchResults.classList.add('d-none');
                 }
             });
