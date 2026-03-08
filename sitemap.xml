@@ -9,29 +9,8 @@
 
     
     <url>
-        <loc>https://cms.visaoverdeai.com.br/cookies/</loc>
-        <lastmod>2026-03-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://cms.visaoverdeai.com.br/politica/</loc>
-        <lastmod>2026-03-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://cms.visaoverdeai.com.br/sobre/</loc>
-        <lastmod>2026-03-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
         <loc>https://cms.visaoverdeai.com.br/contato/</loc>
-        <lastmod>2026-03-07</lastmod>
+        <lastmod>2026-03-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -39,28 +18,21 @@
 
     
     <url>
-        <loc>https://cms.visaoverdeai.com.br/reeee/</loc>
-        <lastmod>2026-03-07</lastmod>
+        <loc>https://cms.visaoverdeai.com.br/34fedfdf/</loc>
+        <lastmod>2026-03-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://cms.visaoverdeai.com.br/lllll/</loc>
-        <lastmod>2026-03-07</lastmod>
+        <loc>https://cms.visaoverdeai.com.br/ddfdf/</loc>
+        <lastmod>2026-03-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://cms.visaoverdeai.com.br/meu-titulo-custom/</loc>
-        <lastmod>2026-03-07</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://cms.visaoverdeai.com.br/ola/</loc>
+        <loc>https://cms.visaoverdeai.com.br/fdfdfd/</loc>
         <lastmod>2026-03-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
@@ -69,7 +41,13 @@
 
     
     <url>
-        <loc>https://cms.visaoverdeai.com.br/categoria/blog/</loc>
+        <loc>https://cms.visaoverdeai.com.br/categoria/blog2/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://cms.visaoverdeai.com.br/categoria/tecnologia/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
