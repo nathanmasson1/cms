@@ -18,21 +18,28 @@
 
     
     <url>
-        <loc>https://cms.visaoverdeai.com.br/posdt-334434/</loc>
+        <loc>https://cms.visaoverdeai.com.br/genero2/</loc>
         <lastmod>2026-03-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://cms.visaoverdeai.com.br/melhores-livros-de-penelope-ward/</loc>
+        <loc>https://cms.visaoverdeai.com.br/genero1/</loc>
         <lastmod>2026-03-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://cms.visaoverdeai.com.br/10-melhores-livros-de-joyce-meyer/</loc>
+        <loc>https://cms.visaoverdeai.com.br/autor1/</loc>
+        <lastmod>2026-03-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://cms.visaoverdeai.com.br/comum/</loc>
         <lastmod>2026-03-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
@@ -42,12 +49,6 @@
     
     <url>
         <loc>https://cms.visaoverdeai.com.br/categoria/blog/</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>https://cms.visaoverdeai.com.br/categoria/tecnologia/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
