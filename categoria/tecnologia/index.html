@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnologia - My Blog</title>
+    <title>Tecnologia - Nome do Site</title>
     
-    <link rel="icon" href="/static/uploads/img_20260307210146.jpg" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/static/uploads/img_20260307210146.jpg">
+    <link rel="icon" href="/static/uploads/img_7d34e5c644.webp" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/static/uploads/img_7d34e5c644.webp">
     
 
-    <meta name="description" content="Posts da categoria Tecnologia no My Blog">
+    <meta name="description" content="Posts da categoria Tecnologia no Nome do Site">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Tecnologia - My Blog">
-    <meta property="og:description" content="Posts da categoria Tecnologia no My Blog">
-    <meta property="og:site_name" content="My Blog">
+    <meta property="og:title" content="Tecnologia - Nome do Site">
+    <meta property="og:description" content="Posts da categoria Tecnologia no Nome do Site">
+    <meta property="og:site_name" content="Nome do Site">
     <link rel="canonical" href="https://cms.visaoverdeai.com.br/categoria/tecnologia/" />
 
     
-    <meta property="og:image" content="https://cms.visaoverdeai.com.br/static/uploads/img_20260307210144.jpg">
+    <meta property="og:image" content="https://cms.visaoverdeai.com.br/static/uploads/img_ce2c413287.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://cms.visaoverdeai.com.br/static/uploads/img_20260307210144.jpg">
+    <meta name="twitter:image" content="https://cms.visaoverdeai.com.br/static/uploads/img_ce2c413287.webp">
     
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,9 +32,9 @@
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      "name": "Tecnologia - My Blog",
+      "name": "Tecnologia - Nome do Site",
       "url": "https://cms.visaoverdeai.com.br/categoria/tecnologia/",
-      "description": "Artigos sobre Tecnologia no site My Blog"
+      "description": "Artigos sobre Tecnologia no site Nome do Site"
     }
     </script>
 
@@ -46,7 +46,7 @@
 
             <a class="navbar-brand fw-bold d-flex align-items-center me-lg-5" href="/">
                 
-                    <img src="/static/uploads/img_20260307210144.jpg" alt="My Blog" style="height: 40px; object-fit: contain;">
+                    <img src="/static/uploads/img_ce2c413287.webp" alt="Nome do Site" width="150" height="40" style="height: 40px; width: auto; object-fit: contain;">
                 
             </a>
 
@@ -62,7 +62,7 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link text-white fw-bold" href="/categoria/blog2/" style="font-size: 0.95rem;">Blog2</a>
+                        <a class="nav-link text-white fw-bold" href="/categoria/blog/" style="font-size: 0.95rem;">Blog</a>
                     </li>
                     
                     <li class="nav-item">
@@ -94,20 +94,8 @@
 
         <div class="row">
             
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
-                    
-                    <a href="/34fedfdf/">
-                        <img src="/static/uploads/34fedfdf.jpg" class="card-img-top rounded-top" style="height: 200px; object-fit: cover;">
-                    </a>
-                    
-                    <div class="card-body">
-                        <h2 class="h5 card-title">
-                            <a href="/34fedfdf/" class="text-decoration-none text-dark">34fedfdf</a>
-                        </h2>
-                        <p class="text-muted small mb-0">08/03/2026</p>
-                    </div>
-                </div>
+            <div class="col-12 text-center py-5">
+                <p class="text-muted lead">Nenhum post publicado nesta categoria ainda.</p>
             </div>
             
         </div>
@@ -122,9 +110,9 @@
                 <div class="col-lg-5 pe-lg-5">
                     <p class="text-uppercase fw-bold mb-3 d-flex align-items-center justify-content-center justify-content-md-start">
                         
-                            <img src="/static/uploads/img_20260307210154.jpg" alt="Logo Rodapé" style="height: 35px; object-fit: contain;" class="me-2 bg-white rounded p-1">
+                            <img src="/static/uploads/img_813e4e1b15.webp" alt="Logo Rodapé" width="120" height="35" style="height: 35px; width: auto; object-fit: contain;" class="me-2 bg-white rounded p-1" loading="lazy">
                         
-                        My Blog
+                        Nome do Site
                     </p>
 
                     <p class="text-light opacity-75 small lh-lg mb-0">
@@ -226,59 +214,64 @@
     </style>
 
     <script>
-        document.addEventListener('DOMContentLoaded', async () => {
+        document.addEventListener('DOMContentLoaded', () => {
             const searchInput = document.getElementById('searchInput');
             const searchResults = document.getElementById('searchResults');
-            let postsData = [];
+            let postsData = null;
+            let carregandoBanco = false;
 
-            try {
-                // Como pode estar em uma subpasta (/categoria/slug/), chamamos o JSON na raiz do domínio com a barra (/) no começo
-                const response = await fetch('/posts.json');
-                if (response.ok) { postsData = await response.json(); }
-            } catch (error) { console.error("Erro ao carregar o banco de pesquisa."); }
+            if(searchInput && searchResults) {
 
-            searchInput.addEventListener('input', (e) => {
-                const query = e.target.value.toLowerCase().trim();
-                searchResults.innerHTML = '';
+                // SCRIPT DE PESQUISA OTIMIZADO (Lazy Fetch)
+                searchInput.addEventListener('focus', async () => {
+                    if (!postsData && !carregandoBanco) {
+                        carregandoBanco = true;
+                        try {
+                            const response = await fetch('/posts.json');
+                            if (response.ok) {
+                                postsData = await response.json();
+                            }
+                        } catch (error) {
+                            console.error("Erro ao carregar o banco de pesquisa.");
+                        }
+                    }
+                });
 
-                if (query.length < 2) {
-                    searchResults.classList.add('d-none');
-                    return;
-                }
+                searchInput.addEventListener('input', (e) => {
+                    if (!postsData) return; // Se ainda não baixou, não faz nada
 
-                const filteredPosts = postsData.filter(post => post.title.toLowerCase().includes(query));
+                    const query = e.target.value.toLowerCase().trim();
+                    searchResults.innerHTML = '';
 
-                if (filteredPosts.length > 0) {
-                    filteredPosts.forEach(post => {
-                        const link = document.createElement('a');
-                        link.href = `/${post.slug}/`;
-                        link.className = 'list-group-item list-group-item-action d-flex align-items-center border-0 border-bottom';
+                    if (query.length < 2) {
+                        searchResults.classList.add('d-none');
+                        return;
+                    }
 
-                        const imgHtml = post.image
-                            ? `<img src="${post.image}" class="rounded me-3 object-fit-cover" style="width: 45px; height: 45px;">`
-                            : `<div class="bg-secondary rounded me-3 opacity-25" style="width: 45px; height: 45px;"></div>`;
+                    const filteredPosts = postsData.filter(post => post.title.toLowerCase().includes(query));
 
-                        link.innerHTML = `
-                            ${imgHtml}
-                            <div class="overflow-hidden">
-                                <h6 class="mb-0 text-truncate text-dark fw-bold" style="font-size: 0.9rem;">${post.title}</h6>
-                                <small class="text-muted" style="font-size: 0.75rem;">${post.date}</small>
-                            </div>
-                        `;
-                        searchResults.appendChild(link);
-                    });
-                    searchResults.classList.remove('d-none');
-                } else {
-                    searchResults.innerHTML = '<div class="list-group-item text-muted text-center py-3 border-0 small">Nenhum artigo encontrado.</div>';
-                    searchResults.classList.remove('d-none');
-                }
-            });
+                    if (filteredPosts.length > 0) {
+                        filteredPosts.forEach(post => {
+                            const link = document.createElement('a');
+                            link.href = `/${post.slug}/`;
+                            link.className = 'list-group-item list-group-item-action d-flex align-items-center border-0 border-bottom';
+                            const imgHtml = post.image ? `<img src="${post.image}" class="rounded me-3 object-fit-cover" style="width: 45px; height: 45px;">` : `<div class="bg-secondary rounded me-3 opacity-25" style="width: 45px; height: 45px;"></div>`;
+                            link.innerHTML = `${imgHtml}<div class="overflow-hidden"><h6 class="mb-0 text-truncate text-dark fw-bold" style="font-size: 0.9rem;">${post.title}</h6><small class="text-muted" style="font-size: 0.75rem;">${post.date}</small></div>`;
+                            searchResults.appendChild(link);
+                        });
+                        searchResults.classList.remove('d-none');
+                    } else {
+                        searchResults.innerHTML = '<div class="list-group-item text-muted text-center py-3 border-0 small">Nenhum artigo encontrado.</div>';
+                        searchResults.classList.remove('d-none');
+                    }
+                });
 
-            document.addEventListener('click', (e) => {
-                if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-                    searchResults.classList.add('d-none');
-                }
-            });
+                document.addEventListener('click', (e) => {
+                    if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                        searchResults.classList.add('d-none');
+                    }
+                });
+            }
         });
     </script>
 
