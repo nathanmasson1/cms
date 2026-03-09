@@ -17,7 +17,40 @@
     
 
     
+    <url>
+        <loc>https://cms.visaoverdeai.com.br/meumeu/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://cms.visaoverdeai.com.br/post-2/</loc>
+        <lastmod>2026-03-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://cms.visaoverdeai.com.br/post-1/</loc>
+        <lastmod>2026-03-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
 
+    
+    <url>
+        <loc>https://cms.visaoverdeai.com.br/categoria/blog/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://cms.visaoverdeai.com.br/categoria/marketing/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
     
 
 </urlset>
